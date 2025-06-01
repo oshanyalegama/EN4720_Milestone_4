@@ -1,0 +1,60 @@
+[
+  {
+    "test": "test_login_spam_detection",
+    "user_id": "user_1",
+    "user_role": "USER",
+    "timestamp": "2025-06-01T11:00:25",
+    "reason": "Too many failed login attempts in 1 minute",
+    "context": {
+      "success": false
+    }
+  },
+  {
+    "test": "test_toggle_spam_detection",
+    "user_id": "user456",
+    "user_role": "USER",
+    "timestamp": "2025-06-01T10:00:11",
+    "reason": "Toggle spam: >10 toggle events in 30 seconds",
+    "context": {
+      "active_session": false
+    }
+  },
+  {
+    "test": "test_anomaly_detection",
+    "sensor_id": "sensorX",
+    "timestamp": "2025-06-01T08:55:03",
+    "reason": "Spike detected: 200.00 > 150% of avg 105.91",
+    "value": 200
+  },
+  {
+    "test": "test_anomaly_detection",
+    "sensor_id": "sensorX",
+    "timestamp": "2025-06-01T08:55:03",
+    "reason": "Invalid sensor value: negative or unexpected zero",
+    "value": -10
+  },
+  {
+    "test": "test_anomaly_detection",
+    "sensor_id": "sensorX",
+    "timestamp": "2025-06-01T08:55:03",
+    "reason": "Invalid sensor value: negative or unexpected zero",
+    "value": 0
+  },
+  {
+    "test": "test_unknown_device_login_spam",
+    "device_id": "device_11",
+    "timestamp": "2025-06-01T09:00:55",
+    "reason": "DDoS suspected: 20 unknown devices attempted login in last 60s"
+  },
+  {
+    "test": "test_multiple_ip_logins",
+    "user_id": "user_shared",
+    "timestamp": "2025-06-01T13:00:30",
+    "ip_addresses": [
+      "10.0.0.1",
+      "172.16.0.5",
+      "8.8.8.8"
+    ],
+    "reason": "Multiple IPs used by user user_shared in 60s: ['8.8.8.8', '192.168.1.1', '10.0.0.1', '172.16.0.5']"
+  }
+]
